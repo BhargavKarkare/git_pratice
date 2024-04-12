@@ -1,7 +1,7 @@
-FROM node:20
-WORKDIR /myapp
-COPY . . 
-RUN npm install
-EXPOSE 3000
-CMD [ "npm", "npm start" ]
+FROM python
 
+WORKDIR /myapp
+
+COPY ./myapp.py .
+
+CMD [ "python", "myapp.py" ]
