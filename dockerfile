@@ -1,5 +1,7 @@
-FROM amazonlinux
-RUN yum install java -y
-COPY . /opt/
-EXPOSE 8080
-ENTRYPOINT [ "/opt/tomcat/bin/catalina.sh", "run" ]
+FROM node:20
+WORKDIR /myapp
+COPY . . 
+RUN npm install
+EXPOSE 3000
+CMD [ "npm", "npm start" ]
+
